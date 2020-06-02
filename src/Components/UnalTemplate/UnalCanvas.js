@@ -328,19 +328,13 @@ class UnalCanvas extends Component {
                   {(() => {
                     if (localStorage.getItem("jwt")) {
                       return (
-                        <a
-                          href="/apoyo/home"
-                          className="btn btn-default dropdown-toggle"
-                        >
+                        <a href="/" className="btn btn-default dropdown-toggle">
                           Inicio
                         </a>
                       );
                     } else {
                       return (
-                        <a
-                          href="/apoyo"
-                          className="btn btn-default dropdown-toggle"
-                        >
+                        <a href="/" className="btn btn-default dropdown-toggle">
                           Inicio
                         </a>
                       );
@@ -367,10 +361,7 @@ class UnalCanvas extends Component {
                   <span className="caret-right"></span>
                 </div>
                 <div className="btn-group">
-                  <a
-                    href="/apoyo/contact"
-                    className="btn btn-default dropdown-toggle"
-                  >
+                  <a href="/" className="btn btn-default dropdown-toggle">
                     Contáctenos
                   </a>
                   <span className="caret-right" />
