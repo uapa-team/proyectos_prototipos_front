@@ -21,7 +21,7 @@ export default withRouter(function App() {
         <MediaCard
           team_name={video.team_name}
           video_key={video.video_key}
-          description={video.description}
+          description={video.description.substring(0, 147)}
         />
       </Grid>
     );
@@ -30,7 +30,7 @@ export default withRouter(function App() {
     <OutherDiv>
       <Grid>
         <Typography variant="h2" style={{ textAlign: "center" }}>
-          Bienvenido a la muestra de proyectos de TPI - Expoideas
+          Bienvenido a la Jornada de Proyectos y Prototipos
         </Typography>
       </Grid>
       <Grid container spacing={2} style={{ marginBottom: "2%" }}>

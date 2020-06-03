@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import { styled } from "@material-ui/styles";
 import { withRouter } from "react-router-dom";
 import { OutherDiv } from "../Home/Home";
@@ -10,12 +10,21 @@ import List from "@material-ui/core/List";
 import Backend from "../../serviceBackend";
 export default withRouter(function (props) {
   const [comments, setComments] = useState([]);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
   useEffect(() => {
     Backend.sendRequest("get", `/comments/${props.match.params.id}`)
       .then((res) => res.json())
-      .then((res) => setComments(res.comments));
+      .then((res) => {
+        setComments(res.comments);
+        setDescription(res.description);
+        setName(res.team_name);
+      });
     // eslint-disable-next-line
-  }, [1]);
+  }, []);
+  const appendComment = (comment) => {
+    setComments([...comments, comment]);
+  };
   const classes = makeStyles((theme) => ({
     root: {
       width: "100%",
@@ -48,6 +57,27 @@ export default withRouter(function (props) {
   };
   return (
     <OutherDiv>
+      <Grid>
+        <Typography variant="h2" style={{ textAlign: "center" }}>
+          {name}
+        </Typography>
+      </Grid>
+      <Grid>
+        <Typography
+          variant="body1"
+          style={{ textAlign: "justify", marginBottom: "2%" }}
+        >
+          {description}
+        </Typography>
+      </Grid>
+      <Grid>
+        <img
+          alt={"poster"}
+          src={"/static/media/poster1.jpg"}
+          width="100%"
+          style={{ marginBottom: "2%" }}
+        />
+      </Grid>
       <Grid container style={{ marginBottom: "2%" }}>
         <Grid item xs={false} sm={1} />
         <Grid item xs={12} sm={10}>
@@ -65,7 +95,10 @@ export default withRouter(function (props) {
       <Grid style={{ marginBottom: "5%" }}>
         <List className={classes.root}>
           {comments.map(PersonalizedComment)}
-          <InputComment video_key={props.match.params.id} />
+          <InputComment
+            video_key={props.match.params.id}
+            appendComment={appendComment}
+          />
         </List>
       </Grid>
     </OutherDiv>

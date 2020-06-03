@@ -24,6 +24,8 @@ export default withRouter(function (props) {
   const [comment, setComment] = useState("");
   const [openG, setOpenG] = useState(false);
   const [openR, setOpenR] = useState(false);
+  const [validName, setValidName] = useState(true);
+  const [validComment, setValidComent] = useState(true);
   const handleClickG = () => {
     setOpenG(true);
   };
@@ -83,9 +85,15 @@ export default withRouter(function (props) {
                   label="Nombre Completo"
                   variant="outlined"
                   onChange={(e) => {
+                    e.preventDefault();
+                    setValidName(e.target.value !== "");
                     setName(e.target.value);
                   }}
                   value={name}
+                  error={!validName}
+                  helperText={
+                    validName ? "" : "Por favor ingresa tu nombre completo"
+                  }
                 />
               }
               secondary={
@@ -115,8 +123,14 @@ export default withRouter(function (props) {
                   value={comment}
                   variant="outlined"
                   onChange={(e) => {
+                    e.preventDefault();
                     setComment(e.target.value);
+                    setValidComent(e.target.value !== "");
                   }}
+                  error={!validComment}
+                  helperText={
+                    validComment ? "" : "Por favor ingresa un comentario"
+                  }
                 />
               </Grid>
               <Grid
@@ -131,15 +145,19 @@ export default withRouter(function (props) {
                   endIcon={<Send />}
                   onClick={(e) => {
                     e.preventDefault();
+                    setValidName(name !== "");
+                    setValidComent(comment !== "");
+                    if (name === "" || comment === "") return;
                     Backend.sendRequest("post", `/comment/${props.video_key}`, {
                       full_name: name,
                       comment: comment,
-                    }).then((res) => {
+                    }).then(async (res) => {
                       if (res.status === 200) {
                         handleClickG();
                         setName("");
                         setComment("");
-                        window.location.reload();
+                        let jsonResponse = await res.json();
+                        props.appendComment(jsonResponse.inserted);
                       } else {
                         handleClickR();
                       }
