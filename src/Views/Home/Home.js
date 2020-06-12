@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MediaCard from "../../Components/MediaCard";
 import { withRouter } from "react-router-dom";
 import { Typography, Grid } from "@material-ui/core";
+import { Pagination } from "@material-ui/lab";
 import { styled } from "@material-ui/core/styles";
 import Backend from "../../serviceBackend";
 export const OutherDiv = styled("div")({
@@ -17,7 +18,7 @@ export default withRouter(function App() {
   }, [1]);
   const personalizedMediaCard = (video) => {
     return (
-      <Grid item xs={12} sm={4} key={video.id}>
+      <Grid item xs={12} sm={4} key={video.video_key}>
         <MediaCard
           team_name={video.team_name}
           video_key={video.video_key}
@@ -33,8 +34,11 @@ export default withRouter(function App() {
           Bienvenido a la Jornada de Proyectos y Prototipos
         </Typography>
       </Grid>
-      <Grid container spacing={2} style={{ marginBottom: "2%" }}>
+      <Grid container spacing={2} style={{ marginBottom: "1%" }}>
         {videos.map(personalizedMediaCard)}
+      </Grid>
+      <Grid container direction="row-reverse" style={{ marginBottom: "3%" }}>
+        <Pagination count={10} color="primary" />
       </Grid>
     </OutherDiv>
   );

@@ -8,6 +8,7 @@ import Comment from "../../Components/Comment";
 import InputComment from "../../Components/InputComment";
 import List from "@material-ui/core/List";
 import Backend from "../../serviceBackend";
+import Poster from "./poster.png";
 export default withRouter(function (props) {
   const [comments, setComments] = useState([]);
   const [name, setName] = useState("");
@@ -48,10 +49,11 @@ export default withRouter(function (props) {
   const PersonalizedComment = (comment) => {
     return (
       <Comment
-        key={`${comment.full_name}${comment.date}${comment.comment}`}
+        key={`${comment.id}`}
         name={comment.full_name}
         date={comment.date}
         comment={comment.comment}
+        id={comment.id}
       />
     );
   };
@@ -62,22 +64,35 @@ export default withRouter(function (props) {
           {name}
         </Typography>
       </Grid>
-      <Grid>
-        <Typography
-          variant="body1"
-          style={{ textAlign: "justify", marginBottom: "2%" }}
-        >
-          {description}
-        </Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={4} style={{ alignSelf: "center" }}>
+          <Typography
+            variant="body1"
+            style={{ textAlign: "justify", marginBottom: "2%" }}
+          >
+            {description}
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <img
+            alt={"poster"}
+            src={Poster}
+            width="100%"
+            style={{ marginBottom: "2%" }}
+          />
+        </Grid>
       </Grid>
-      <Grid>
-        <img
-          alt={"poster"}
-          src={"/static/media/poster1.jpg"}
-          width="100%"
-          style={{ marginBottom: "2%" }}
-        />
-      </Grid>
+      {/* <Grid container style={{ marginBottom: "2%" }}>
+        <Grid item xs={false} sm={1} />
+        <Grid item xs={12} sm={10}>
+          <img
+            alt={"poster"}
+            src={Poster}
+            width="100%"
+            style={{ marginBottom: "2%" }}
+          />
+        </Grid>
+      </Grid> */}
       <Grid container style={{ marginBottom: "2%" }}>
         <Grid item xs={false} sm={1} />
         <Grid item xs={12} sm={10}>

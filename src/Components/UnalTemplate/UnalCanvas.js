@@ -215,8 +215,8 @@ class UnalCanvas extends Component {
             </div>
             <div id="bs-navbar" className="navbar-collapse collapse navigation">
               <div className="site-url">
-                <a href="https://www.ingenieria.bogota.unal.edu.co/tpi-expoideas/">
-                  ingenieria.bogota.unal.edu.co/tpi-expoideas/
+                <a href="https://www.ingenieria.bogota.unal.edu.co/proyectos_prototipos/">
+                  ingenieria.bogota.unal.edu.co/proyectos_prototipos/
                 </a>
               </div>
               <div className="buscador">

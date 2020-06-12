@@ -18,7 +18,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Backend from "../serviceBackend";
-//import useComments from "../Hooks/useComments";
 export default withRouter(function (props) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
