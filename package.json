@@ -2,7 +2,7 @@
   "name": "proyectos_prototipos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.ingenieria.bogota.unal.edu.co/uapapp/",
+  "homepage": "https://www.ingenieria.bogota.unal.edu.co/proyectos_prototipos/",
   "dependencies": {
     "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.9.1",
