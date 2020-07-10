@@ -325,21 +325,12 @@ class UnalCanvas extends Component {
               </div>
               <div className="mainMenu">
                 <div className="btn-group">
-                  {(() => {
-                    if (localStorage.getItem("jwt")) {
-                      return (
-                        <a href="/" className="btn btn-default dropdown-toggle">
-                          Inicio
-                        </a>
-                      );
-                    } else {
-                      return (
-                        <a href="/" className="btn btn-default dropdown-toggle">
-                          Inicio
-                        </a>
-                      );
-                    }
-                  })()}
+                  <a
+                    href="https://www.ingenieria.bogota.unal.edu.co/proyectos_prototipos/"
+                    className="btn btn-default dropdown-toggle"
+                  >
+                    Inicio
+                  </a>
                   <span className="caret-right" />
                 </div>
                 <div className="btn-group">
@@ -359,12 +350,6 @@ class UnalCanvas extends Component {
                     Programas
                   </a>
                   <span className="caret-right"></span>
-                </div>
-                <div className="btn-group">
-                  <a href="/" className="btn btn-default dropdown-toggle">
-                    Contáctenos
-                  </a>
-                  <span className="caret-right" />
                 </div>
                 <div className="btn-group">
                   <a
