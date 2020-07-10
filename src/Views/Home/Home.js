@@ -45,7 +45,7 @@ export default withRouter(function App() {
         <Alert variant="filled" severity="success">
           <Typography variant="h2" style={{ textAlign: "center" }}>
             A partir del lunes 14 de julio, encuentra aquí todos los proyectos
-            de los estudiantes que estás cursando las asignturas de introducción
+            de los estudiantes que están cursando las asignturas de introducción
             a la ingeniería y estructuras de datos!
           </Typography>
         </Alert>
