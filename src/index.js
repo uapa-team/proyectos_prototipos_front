@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 import MaterialUiTheme from "./material_theme";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { register } from "./serviceWorker";
+import { unregister } from "./serviceWorker";
 ReactDOM.render(
   <ThemeProvider theme={MaterialUiTheme}>
     <BrowserRouter basename="/proyectos_prototipos">
@@ -20,4 +20,4 @@ ReactDOM.render(
   </ThemeProvider>,
   document.getElementById("root")
 );
-register();
+unregister();
