@@ -33,7 +33,7 @@ export default withRouter(function App() {
     <OutherDiv>
       <Grid>
         <Typography variant="h2" style={{ textAlign: "center" }}>
-          Bienvenido a la Jornada de Proyectos y Prototipos
+          Bienvenido/a a la Jornada de Proyectos y Prototipos
         </Typography>
       </Grid>
       <Grid
@@ -44,9 +44,9 @@ export default withRouter(function App() {
         {/* {videos.map(personalizedMediaCard)} */}
         <Alert variant="filled" severity="success">
           <Typography variant="h2" style={{ textAlign: "center" }}>
-            A partir del lunes 14 de julio, encuentra aquí todos los proyectos
-            de los estudiantes que están cursando las asignturas de introducción
-            a la ingeniería y estructuras de datos!
+            A partir del lunes 13 de julio, encuentra aquí todos los proyectos
+            de los estudiantes que están cursando las asignturas de Introducción
+            a la Ingeniería y Estructuras de Datos!
           </Typography>
         </Alert>
       </Grid>
