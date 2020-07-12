@@ -8,18 +8,20 @@ import Comment from "../../Components/Comment";
 import InputComment from "../../Components/InputComment";
 import List from "@material-ui/core/List";
 import Backend from "../../serviceBackend";
-import Poster from "./poster.png";
+import Projects from "../Home/projects";
 export default withRouter(function (props) {
+  const [project, setProject] = useState({});
   const [comments, setComments] = useState([]);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
   useEffect(() => {
+    Projects.forEach((value) => {
+      if (value.Video_Key === props.match.params.id) {
+        setProject(value);
+      }
+    });
     Backend.sendRequest("get", `/comments/${props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => {
         setComments(res.comments);
-        setDescription(res.description);
-        setName(res.team_name);
       });
     // eslint-disable-next-line
   }, []);
@@ -61,7 +63,7 @@ export default withRouter(function (props) {
     <OutherDiv>
       <Grid>
         <Typography variant="h2" style={{ textAlign: "center" }}>
-          {name}
+          {project.Name}
         </Typography>
       </Grid>
       <Grid container spacing={2}>
@@ -70,13 +72,13 @@ export default withRouter(function (props) {
             variant="body1"
             style={{ textAlign: "justify", marginBottom: "2%" }}
           >
-            {description}
+            {project.Description}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={8}>
           <img
             alt={"poster"}
-            src={Poster}
+            src={`https://i.imgur.com/${project.Poster_Key}.png`}
             width="100%"
             style={{ marginBottom: "2%" }}
           />

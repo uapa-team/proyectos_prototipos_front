@@ -24,12 +24,12 @@ export default withRouter(function (props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   };
   return (
-    <Card>
+    <Card style={{ marginBottom: "5%" }}>
       <CardActionArea
         onClick={() => props.history.push(`/video/${props.video_key}`)}
       >
         <FixedCard
-          image={`https://i.ytimg.com/vi/${props.video_key}/maxresdefault.jpg`}
+          image={`https://i.ytimg.com/vi/${props.video_key}/hqdefault.jpg`}
           title={props.team_name}
         />
         <CardContent>
@@ -48,7 +48,7 @@ export default withRouter(function (props) {
           onClick={() => {
             var dummy = document.createElement("textarea");
             document.body.appendChild(dummy);
-            dummy.value = `http://localhost:3000/video/${props.video_key}`;
+            dummy.value = `https://ingenieria.bogota.unal.edu.co/proyectos_prototipos/video/${props.video_key}`;
             dummy.select();
             document.execCommand("copy");
             document.body.removeChild(dummy);

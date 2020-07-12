@@ -1,58 +1,69 @@
-import React from "react";
-// import MediaCard from "../../Components/MediaCard";
+import React, { useState, useEffect } from "react";
+import MediaCard from "../../Components/MediaCard";
 import { withRouter } from "react-router-dom";
 import { Typography, Grid } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
-import "./Home.css";
-// import { Pagination } from "@material-ui/lab";
+import "./Home.scss";
+import { Pagination } from "@material-ui/lab";
 import { styled } from "@material-ui/core/styles";
-// import Backend from "../../serviceBackend";
+import Projects from "./projects";
 export const OutherDiv = styled("div")({
   paddingTop: "2%",
 });
+const shuffle = (array) => {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+};
 export default withRouter(function App() {
-  // const [videos, setVideos] = useState([]);
-  // useEffect(() => {
-  //   Backend.sendRequest("get", "/videos")
-  //     .then((res) => res.json())
-  //     .then((res) => setVideos(res.videos));
-  //   // eslint-disable-next-line
-  // }, [1]);
-  // const personalizedMediaCard = (video) => {
-  //   return (
-  //     <Grid item xs={12} sm={4} key={video.video_key}>
-  //       <MediaCard
-  //         team_name={video.team_name}
-  //         video_key={video.video_key}
-  //         description={video.description.substring(0, 147)}
-  //       />
-  //     </Grid>
-  //   );
-  // };
+  const [page, setPage] = useState(1);
+  const [cards, setCards] = useState([]);
+  useEffect(() => {
+    setCards(shuffle(Projects));
+  }, []);
+  const personalizedMediaCard = (video) => {
+    return (
+      <MediaCard
+        key={video.Video_Key}
+        team_name={video.Name}
+        video_key={video.Video_Key}
+        description={video.Description.substring(0, 147)}
+      />
+    );
+  };
   return (
     <OutherDiv>
       <Grid>
-        <Typography variant="h2" style={{ textAlign: "center" }}>
+        <Typography
+          variant="h2"
+          style={{ textAlign: "center", marginBottom: "1%" }}
+        >
           Bienvenido/a a la Jornada de Proyectos y Prototipos
         </Typography>
       </Grid>
-      <Grid
-        container
-        spacing={2}
-        style={{ marginBottom: "1%", marginTop: "5%" }}
-      >
-        {/* {videos.map(personalizedMediaCard)} */}
-        <Alert variant="filled" severity="success">
-          <Typography variant="h2" style={{ textAlign: "center" }}>
-            A partir del lunes 13 de julio, encuentra aquí todos los proyectos
-            de los estudiantes que están cursando las asignturas de Introducción
-            a la Ingeniería y Estructuras de Datos!
-          </Typography>
-        </Alert>
+      <Grid>
+        <div className="masonry-with-columns">
+          {cards.slice((page - 1) * 12, page * 12).map(personalizedMediaCard)}
+        </div>
       </Grid>
-      {/* <Grid container direction="row-reverse" style={{ marginBottom: "3%" }}>
-        <Pagination count={10} color="primary" />
-      </Grid> */}
+      <Grid container direction="row-reverse" style={{ marginBottom: "3%" }}>
+        <Pagination
+          count={Math.ceil(cards.length / 12)}
+          color="primary"
+          onChange={(_, p) => {
+            setPage(p);
+            window.scrollTo(0, 0);
+          }}
+          page={page}
+        />
+      </Grid>
     </OutherDiv>
   );
 });
