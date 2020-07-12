@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { unregister } from "./serviceWorker";
 ReactDOM.render(
   <ThemeProvider theme={MaterialUiTheme}>
-    <BrowserRouter basename="/proyectos_prototipos">
+    <BrowserRouter>
       <UnalCanvas>
         <Switch>
           <Route exact path="/" component={Home} />

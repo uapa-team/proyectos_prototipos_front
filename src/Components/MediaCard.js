@@ -24,7 +24,13 @@ export default withRouter(function (props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   };
   return (
-    <Card style={{ marginBottom: "5%" }}>
+    <Card
+      style={{
+        marginBottom: "5%",
+        backgroundColor:
+          props.subject === "Data Structures" ? "dodgerblue" : "white",
+      }}
+    >
       <CardActionArea
         onClick={() => props.history.push(`/video/${props.video_key}`)}
       >
@@ -48,7 +54,7 @@ export default withRouter(function (props) {
           onClick={() => {
             var dummy = document.createElement("textarea");
             document.body.appendChild(dummy);
-            dummy.value = `https://ingenieria.bogota.unal.edu.co/proyectos_prototipos/video/${props.video_key}`;
+            dummy.value = `https://proyectosprototipos.web.app/video/${props.video_key}`;
             dummy.select();
             document.execCommand("copy");
             document.body.removeChild(dummy);

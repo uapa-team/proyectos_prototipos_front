@@ -215,7 +215,7 @@ class UnalCanvas extends Component {
             </div>
             <div id="bs-navbar" className="navbar-collapse collapse navigation">
               <div className="site-url">
-                <a href="https://www.ingenieria.bogota.unal.edu.co/proyectos_prototipos/">
+                <a href="https://proyectos_prototipos.web.app/">
                   ingenieria.bogota.unal.edu.co/proyectos_prototipos/
                 </a>
               </div>

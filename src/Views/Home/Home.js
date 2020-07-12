@@ -34,7 +34,8 @@ export default withRouter(function App() {
         key={video.Video_Key}
         team_name={video.Name}
         video_key={video.Video_Key}
-        description={video.Description.substring(0, 147)}
+        description={video.Description.substring(0, 147) + "..."}
+        subject={video.Subject}
       />
     );
   };

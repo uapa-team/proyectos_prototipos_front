@@ -84,17 +84,6 @@ export default withRouter(function (props) {
           />
         </Grid>
       </Grid>
-      {/* <Grid container style={{ marginBottom: "2%" }}>
-        <Grid item xs={false} sm={1} />
-        <Grid item xs={12} sm={10}>
-          <img
-            alt={"poster"}
-            src={Poster}
-            width="100%"
-            style={{ marginBottom: "2%" }}
-          />
-        </Grid>
-      </Grid> */}
       <Grid container style={{ marginBottom: "2%" }}>
         <Grid item xs={false} sm={1} />
         <Grid item xs={12} sm={10}>
