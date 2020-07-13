@@ -24,7 +24,13 @@ export default withRouter(function (props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   };
   return (
-    <Card style={{ marginBottom: "5%" }}>
+    <Card
+      style={{
+        marginBottom: "5%",
+        backgroundColor:
+          props.subject === "Data Structures" ? "dodgerblue" : "white",
+      }}
+    >
       <CardActionArea
         onClick={() => props.history.push(`/video/${props.video_key}`)}
       >
