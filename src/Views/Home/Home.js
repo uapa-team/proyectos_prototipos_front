@@ -47,6 +47,33 @@ export default withRouter(function App() {
         >
           Bienvenido/a a la Jornada de Proyectos y Prototipos
         </Typography>
+        <Typography
+          variant="h5"
+          style={{ textAlign: "center", marginBottom: "1%" }}
+        >
+          <p>
+            Bienvenido/a a la jornada de proyectos y prototipos de la Facultad
+            de Ingeniería de la Universidad Nacional de Colombia. En esta
+            plataforma podrás conocer información sobre los proyectos de
+            realizados a lorgo del primer semestre del año 2020 por estudiantes
+            que están cursando las asignaturas de "Introducción a la ingeniería"
+            y "Estructura de datos". Cada equipo de trabajo desarrolló un póster
+            que, acompañado de una descripción y un corto vídeo, tienen la
+            intención de comunicar los objetivos, procesos, aprendizajes y
+            resultados obtenidos dentro de sus proyectos académicos.
+          </p>
+        </Typography>
+        <Typography
+          variant="h5"
+          style={{ textAlign: "center", marginBottom: "1%" }}
+        >
+          <p>
+            La plataforma te mostrará de forma aleatoria cada de uno de los
+            proyectos participantes de la feria, te invitamos a que luego de
+            verlos dejes tus apreciaciones y/o retroalimentación en el espacio
+            de "comentarios".
+          </p>
+        </Typography>
       </Grid>
       <Grid>
         <div className="masonry-with-columns">
