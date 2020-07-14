@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MediaCard from "../../Components/MediaCard";
 import { withRouter } from "react-router-dom";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, TextField } from "@material-ui/core";
 import "./Home.scss";
 import { Pagination } from "@material-ui/lab";
 import { styled } from "@material-ui/core/styles";
@@ -22,9 +22,10 @@ const shuffle = (array) => {
   }
   return array;
 };
-export default withRouter(function App() {
+export default withRouter(() => {
   const [page, setPage] = useState(1);
   const [cards, setCards] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
     setCards(shuffle(Projects));
   }, []);
@@ -62,26 +63,65 @@ export default withRouter(function App() {
             de sus proyectos académicos.
           </p>
         </Typography>
-        <Typography
-          variant="h5"
-          style={{ textAlign: "center", marginBottom: "1%" }}
-        >
-          <p>
-            La plataforma mostrará de forma aleatoria cada de uno de los
-            proyectos participantes en la jornada. Te invitamos a que luego de
-            verlos dejes tus apreciaciones y/o retroalimentación en el espacio
-            de "comentarios".
-          </p>
-        </Typography>
+        <Grid container>
+          <Grid item xs={12} sm={8}>
+            <Typography
+              variant="h5"
+              style={{ textAlign: "center", marginBottom: "1%" }}
+            >
+              <p>
+                La plataforma mostrará de forma aleatoria cada de uno de los
+                proyectos participantes en la jornada. Te invitamos a que luego
+                de verlos dejes tus apreciaciones y/o retroalimentación en el
+                espacio de "comentarios".
+              </p>
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4} style={{ textAlign: "center" }}>
+            <TextField
+              id="outlined-basic"
+              label="Buscar proyectos"
+              variant="outlined"
+              style={{ width: "70%" }}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </Grid>
+        </Grid>
       </Grid>
       <Grid>
         <div className="masonry-with-columns">
-          {cards.slice((page - 1) * 12, page * 12).map(personalizedMediaCard)}
+          {cards
+            .filter((video) =>
+              video.Name.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .includes(
+                  searchTerm
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                )
+            )
+            .slice((page - 1) * 12, page * 12)
+            .map(personalizedMediaCard)}
         </div>
       </Grid>
       <Grid container direction="row-reverse" style={{ marginBottom: "3%" }}>
         <Pagination
-          count={Math.ceil(cards.length / 12)}
+          count={Math.ceil(
+            cards.filter((video) =>
+              video.Name.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .includes(
+                  searchTerm
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                )
+            ).length / 12
+          )}
           color="primary"
           onChange={(_, p) => {
             setPage(p);

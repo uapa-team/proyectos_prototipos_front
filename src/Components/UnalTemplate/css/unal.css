@@ -631,6 +631,7 @@ ul.dropdown-menu a:focus {
   background-image: none !important;
   width: 100%;
   padding: 0;
+  padding-left: 6%;
 }
 
 #unalTop .navigation .buscador .gsc-control-searchbox-only .gsc-input input {
@@ -640,7 +641,7 @@ ul.dropdown-menu a:focus {
   display: inline;
   font-size: 1em;
   width: 150px !important;
-  text-align: center;
+  /* text-align: center; */
 }
 
 #unalTop

@@ -16,6 +16,7 @@ class UnalCanvas extends Component {
     this.handleSession = this.handleSession.bind(this);
     this.state = {
       logged: false,
+      searchTerm: "",
     };
   }
   handleSession = (logged) => {
@@ -256,7 +257,7 @@ class UnalCanvas extends Component {
                                           name="search"
                                           title="buscar"
                                           id="gsc-i-id1"
-                                          placeholder="Buscar en la Universidad"
+                                          placeholder="Buscar proyectos"
                                           style={{
                                             width: "100%",
                                             padding: "0px",
@@ -270,6 +271,11 @@ class UnalCanvas extends Component {
                                           }}
                                           dir="ltr"
                                           spellCheck="false"
+                                          onChange={(e) =>
+                                            this.setState({
+                                              searchTerm: e.target.value,
+                                            })
+                                          }
                                         />
                                       </td>
                                       <td className="gsib_b">
@@ -368,7 +374,9 @@ class UnalCanvas extends Component {
             className="detalle"
             style={{ marginLeft: "50px", marginRight: "50px" }}
           >
-            {this.props.children}
+            {React.cloneElement(this.props.children, {
+              searchTerm: this.state.searchTerm,
+            })}
           </main>
         </div>
 

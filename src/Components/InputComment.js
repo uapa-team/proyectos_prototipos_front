@@ -79,7 +79,7 @@ export default withRouter(function (props) {
             <ListItemText
               primary={
                 <TextField
-                  style={{ width: "30%" }}
+                  className="InputCommentClass"
                   id="outlined-basic"
                   label="Nombre Completo"
                   variant="outlined"

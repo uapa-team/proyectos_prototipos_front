@@ -81,7 +81,7 @@ export default withRouter(function (props) {
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <Typography variant="h5">{`${props.name} — `}</Typography>
                     <Typography
-                      style={{ height: "15px" }}
+                      style={{ height: "15px", whiteSpace: "nowrap" }}
                       component="span"
                       variant="body2"
                       className={classes.inline}

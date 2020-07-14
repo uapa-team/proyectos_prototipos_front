@@ -241,8 +241,15 @@ export default [
     Name: "CASHY",
     Description:
       "Una aplicación móvil que pretende simular el trabajo de una hoja contable. Tiene un diseño minimalista y pretende ser intuitiva, para que gente con empleos informales pueda utilizarla de forma cómoda y útil. Permitiendo así un mejor control sobre las financias de su negocio.",
-    Video_Key: "_r38VvKrNmw",
+    Video_Key: "MG0bMVFtfBU",
     Poster_Key: "nSAwxQc",
+    Subject: "Data Structures",
+  },
+  {
+    Name: "SlipChat",
+    Description: "Chat implementado bajo el uso de estructuras de datos.",
+    Video_Key: "_1Iu3d9Z9KI",
+    Poster_Key: "IemKgdH",
     Subject: "Data Structures",
   },
   {
@@ -432,6 +439,14 @@ export default [
       "Nuestro proyecto puede tomarse como una salida o pequeña ayuda para las personas que están pasando por problemas alimenticios, y que se han visto aún más afectados debido al aumento de desempleo causado por la crisis dada por la pandemia. Por ello nos planteamos como objetivo elaborar una guía sobre cómo hacer una huerta casera para suplir parcialmente necesidades alimenticias en algunos hogares bogotanos, empleando la mayor cantidad de elementos reciclables posibles para reducir los costos de su realización. Para alcanzar este objetivo dividimos la metodología en 4 fases, siendo la primera la fase de documentación, en donde se realizó una consulta sobre los términos y requisitos para hacer la huerta; después seguimos con una fase de prueba de siembra donde realizamos una huerta de tomate y otra de arveja (esta etapa aún está en proceso). A continuación sigue la fase de recolección de datos de la anterior etapa y por último la fase de elaboración de la guía con la información obtenida en las fases anteriores. Cómo uno de los resultados esperamos generar un aporte positivo para la comunidad afectada por esta problemática. También cabe destacar que una vez terminada la guía no se piensa exigir ningún tipo de costo por su obtención.",
     Video_Key: "75LCPVmsnvw",
     Poster_Key: "jRe9ucG",
+    Subject: "Introduction",
+  },
+  {
+    Name: "Sistema Automatizado de recoleccion y purificacion de agua",
+    Description:
+      "Nuestro sistema automatizado de recolección y purificación de agua, se especializa en la recolección de agua lluvia, la cual se almacenará en un tanque de 1000 litros; el sistema embebido integrado en el mecanismo, permitirá el paso del agua al accionar una electroválvula que tendrá como destino un filtro físico, este se encarga de limpiar todas las impurezas que no sean de carácter biológico como los microorganismos. Una vez terminada esta fase, pasará a un tanque que tiene incorporada una luz ultravioleta, cuya función es la de exterminar la mayor cantidad de microorganismos como le sea posible para que el liquido sea el ideal para el consumo humano. Por último, el agua sera almacenada en un tanque de igual capacidad que el primero, con el fin de que las personas puedan extraer el agua para sus necesidades.",
+    Video_Key: "HFHROFu7Orw",
+    Poster_Key: "rpHsoNe",
     Subject: "Introduction",
   },
   {

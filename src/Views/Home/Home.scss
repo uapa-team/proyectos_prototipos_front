@@ -1,9 +1,19 @@
 .MuiAlert-icon {
   align-self: center !important;
 }
+
+.InputCommentClass {
+  width: 30%;
+}
 @media (max-width: 460px) {
   .MuiTypography-h2 {
     font-size: 2.5rem !important;
+  }
+  .MuiListItemText-multiline {
+    margin-left: 13%;
+  }
+  .InputCommentClass {
+    width: 100%;
   }
 }
 .MuiCard-root {
