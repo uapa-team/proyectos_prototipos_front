@@ -1206,7 +1206,7 @@ export default [
     Description:
       "Se propone disminuir la cantidad de agua desechada innecesariamente en los hogares mediante la reutilizacion de aguas grises de la lavadora, estas se usaran para accionar el sistema de descarga de una cisterna, esto se podria llegar acabo desde nuestro prototipo que ademas de manejar valvulas para el agua tambien mide y controla las variables de la misma.Por otro lado, la herramienta principal que se usó en el prototipo fue el microcontrolador Arduino uno. Una placa electrónica que gracias a su facilidad y gran variedad de funciones, se encargará de tomar datos en tiempo que real de todas las variables que influyen en el sistema de recolección y transporte del agua, con el fin de llevar un control al comportamiento de dicho sistema. ",
     Video_Key: "wHck6JuizS4",
-    Poster_Key: "wHsg8Jn",
+    Poster_Key: "JEzexeM",
     Subject: "Introduction",
   },
   {
