@@ -78,7 +78,7 @@ export default [
     Description:
       "Proyecto de Ingenerios eléctricos, eléctronicos que busca realizar  construcción de un robot explorador con transmisión de Poster_Key, con el objetivo de aplicar los conocimientos de la ingeniería.",
     Poster_Key: "",
-    Video_Key: "lxXZFqErtBY",
+    Video_Key: "Xka8hbBhWzM",
   },
   {
     Name: "CEIMTUN",
@@ -299,5 +299,11 @@ export default [
       "Proyecto que brinda un espacio de sano compartir y aprendizaje donde se promueve la participación e interacción de diferentes personas en las prácticas y conocimientos relacionados con técnicas, formas de hacer y de aprovechar la agricultura urbana.",
     Poster_Key: "t0E7xXL",
     Video_Key: "nvk8786",
+  },
+  {
+    Name: "Aerospace Race",
+    Description:
+      "Proyecto estudiantil que abordar temas aerospaciales y trabaja con proyectos para aplicar el conocimiento teórico y hacerlo práctico, como el primer equipo universitario de drones de carrera Rover agrónomo y satélite en lata. Contacto: aess_fibog@unal.edu.co",
+    Video_Key: "lxXZFqErtBY",
   },
 ];
