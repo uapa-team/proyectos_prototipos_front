@@ -18,7 +18,7 @@ export default [
     Description:
       "Proyecto que organiza las Olimpiadas Universitarias de Termodinámica",
     Poster_Key: "",
-    Video_Key: "cn4RvQh1swU",
+    Video_Key: "89q7rHyXAf4",
   },
   {
     Name: "Dron y satélite Agro",
