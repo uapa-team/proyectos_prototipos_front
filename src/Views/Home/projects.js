@@ -64,13 +64,13 @@ export default [
     Description:
       "proyecto de CHEM-E -CAR  (este proyecto ensambla un carro que se conduce a partir de reacciones quimicas),  tecnologías de rehabilitación.",
     Poster_Key: "",
-    Video_Key: "RoBXwfOkDho",
+    Video_Key: "aJh8jAqVrfE",
   },
   {
     Name: "RAMA IEEE",
     Description:
       "Proyecto de Ingenerios eléctricos, eléctronicos que busca realizar  construcción de un robot explorador con transmisión de Poster_Key, con el objetivo de aplicar los conocimientos de la ingeniería.",
-    Poster_Key: "",
+    Poster_Key: "bBD9VLx",
     Video_Key: "Xka8hbBhWzM",
   },
   {
