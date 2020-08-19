@@ -41,13 +41,6 @@ export default [
     Video_Key: "gju2gWHy7aw",
   },
   {
-    Name: "CUR",
-    Description:
-      "Comunidad Universitaria Reformada, cursos de inglés estilo clubs conversacionales",
-    Poster_Key: "",
-    Video_Key: "H9_AN5axMb4",
-  },
-  {
     Name: "BIOMED UN",
     Description:
       "Proyecto sobre Sesión de técnicas en biología celular,  EEG, Emotiv Insight y BCI",
