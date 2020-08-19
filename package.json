@@ -1,8 +1,8 @@
 {
-  "name": "proyectos_prototipos",
+  "name": "primiferia_bienestar",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.ingenieria.bogota.unal.edu.co/proyectos_prototipos/",
+  "homepage": "https://www.ingenieria.bogota.unal.edu.co/primiferia_bienestar/",
   "dependencies": {
     "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.9.1",

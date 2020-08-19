@@ -37,6 +37,7 @@ export default withRouter(() => {
         video_key={video.Video_Key}
         description={video.Description.substring(0, 147)}
         subject={video.Subject}
+        Poster_Key={video.Poster_Key}
       />
     );
   };
@@ -47,20 +48,23 @@ export default withRouter(() => {
           variant="h2"
           style={{ textAlign: "center", marginBottom: "1%" }}
         >
-          Bienvenido/a a la Jornada de Proyectos y Prototipos
+          FERIA VIRTUAL DE SERVICIOS - DIRECCIÓN DE BIENESTAR DE LA FACULTAD DE
+          INGENIERÍA
         </Typography>
         <Typography
           variant="h5"
           style={{ textAlign: "center", marginBottom: "1%" }}
         >
           <p>
-            En esta plataforma podrás conocer los proyectos realizados por
-            estudiantes que durante el primer semestre del año 2020 cursaron las
-            asignaturas de "Introducción a la ingeniería" y "Estructuras de
-            datos”. Cada equipo de trabajo elaboró un póster que, acompañado de
-            una descripción y un corto vídeo, tiene la intención de comunicar
-            los objetivos, procesos, aprendizajes y resultados obtenidos dentro
-            de sus proyectos académicos.
+            Nos alegra mucho recibir a los/as nuevos/as estudiantes de pregrado,
+            posgrado y admisión especial PAES, PEAMA y victimas del conflicto.
+            Esperamos que encuentren en Bienestar de la Facultad un espacio
+            abierto y seguro al lado de directivos, profesionales y estudiantes
+            pares. En esta plataforma podrás conocer los proyectos de los Grupos
+            Estudiantiles, Programa de Gestión de Proyectos (PGP) de la Facultad
+            de Ingeniería, así como las actividades ofrecidas por las áreas de
+            Salud, Acompañamiento Integral, Cultura, Deportes y Actividad Física
+            de la Dirección de Bienestar.
           </p>
         </Typography>
         <Grid container>
@@ -70,10 +74,11 @@ export default withRouter(() => {
               style={{ textAlign: "center", marginBottom: "1%" }}
             >
               <p>
-                La plataforma mostrará de forma aleatoria cada de uno de los
-                proyectos participantes en la jornada. Te invitamos a que luego
-                de verlos dejes tus apreciaciones y/o retroalimentación en el
-                espacio de "comentarios".
+                La plataforma mostrará de forma aleatoria videos, posters, datos
+                de contacto y enlaces que puedes visitar para ampliar la
+                información. Te invitamos a que luego de verlos dejes tus
+                apreciaciones y/o retroalimentación en el espacio de
+                "comentarios".
               </p>
             </Typography>
           </Grid>

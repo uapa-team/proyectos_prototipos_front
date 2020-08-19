@@ -1,6 +1,6 @@
 export default class Backend {
   static backEndUrl =
-    "https://ingenieria.bogota.unal.edu.co/proyectos_prototipos_api";
+    "https://ingenieria.bogota.unal.edu.co/primiferia_bienestar_api";
 
   static openLink(url) {
     window.open(this.backEndUrl + url, "_blank");

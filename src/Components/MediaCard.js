@@ -35,7 +35,11 @@ export default withRouter(function (props) {
         onClick={() => props.history.push(`/video/${props.video_key}`)}
       >
         <FixedCard
-          image={`https://i.ytimg.com/vi/${props.video_key}/hqdefault.jpg`}
+          image={
+            !props.video_key.includes("nvk878")
+              ? `https://i.ytimg.com/vi/${props.video_key}/hqdefault.jpg`
+              : `https://i.imgur.com/${props.Poster_Key}.png`
+          }
           title={props.team_name}
         />
         <CardContent>

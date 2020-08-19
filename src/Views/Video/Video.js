@@ -66,23 +66,36 @@ export default withRouter(function (props) {
           {project.Name}
         </Typography>
       </Grid>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={4} style={{ alignSelf: "center" }}>
-          <Typography
-            variant="body1"
-            style={{ textAlign: "justify", marginBottom: "2%" }}
-          >
-            {project.Description}
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={8}>
-          <img
-            alt={"poster"}
-            src={`https://i.imgur.com/${project.Poster_Key}.png`}
-            width="100%"
-            style={{ marginBottom: "2%" }}
-          />
-        </Grid>
+      <Grid container direction="row" spacing={2}>
+        {project.Poster_Key === "" || project.Poster_Key === undefined ? (
+          <Grid item xs={12} sm={12} style={{ alignSelf: "center" }}>
+            <Typography
+              variant="body1"
+              style={{ textAlign: "center", marginBottom: "2%" }}
+            >
+              {project.Description}
+            </Typography>
+          </Grid>
+        ) : (
+          <div style={{ display: "flex", marginTop: "2%" }}>
+            <Grid item xs={12} sm={4} style={{ alignSelf: "center" }}>
+              <Typography
+                variant="body1"
+                style={{ textAlign: "justify", margin: "2%" }}
+              >
+                {project.Description}
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <img
+                alt={"poster"}
+                src={`https://i.imgur.com/${project.Poster_Key}.png`}
+                width="100%"
+                style={{ margin: "2%" }}
+              />
+            </Grid>
+          </div>
+        )}
       </Grid>
       {/* <Grid container style={{ marginBottom: "2%" }}>
         <Grid item xs={false} sm={1} />
@@ -95,20 +108,24 @@ export default withRouter(function (props) {
           />
         </Grid>
       </Grid> */}
-      <Grid container style={{ marginBottom: "2%" }}>
-        <Grid item xs={false} sm={1} />
-        <Grid item xs={12} sm={10}>
-          <VideoContainer>
-            <VideoFrame
-              title="TPI Expoideas"
-              src={`https://www.youtube.com/embed/${props.match.params.id}`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </VideoContainer>
+      {props.match.params.id.includes("nvk878") ? (
+        <div></div>
+      ) : (
+        <Grid container style={{ marginBottom: "2%" }}>
+          <Grid item xs={false} sm={1} />
+          <Grid item xs={12} sm={10}>
+            <VideoContainer>
+              <VideoFrame
+                title="TPI Expoideas"
+                src={`https://www.youtube.com/embed/${props.match.params.id}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </VideoContainer>
+          </Grid>
         </Grid>
-      </Grid>
+      )}
       <Grid style={{ marginBottom: "5%" }}>
         <List className={classes.root}>
           {comments.map(PersonalizedComment)}
