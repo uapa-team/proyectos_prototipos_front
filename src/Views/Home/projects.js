@@ -82,7 +82,7 @@ export default [
   {
     Name: "STEOS",
     Description:
-      "Proytecto que busca el ensamble y puesta en marcha  del prototipo de vehículo eléctrico",
+      "Proyecto que busca el ensamble y puesta en marcha del prototipo de vehículo eléctrico",
     Poster_Key: "",
     Video_Key: "OeTq0yIz5y4",
   },
