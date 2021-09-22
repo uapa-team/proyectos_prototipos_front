@@ -99,4 +99,9 @@ export default [
     Description: "grupopatinajeapun_bog@unal.edu.co",
     Video_Key: "ft5A8h50HAU",
   },
+  {
+    Name: "Género e Ingeniería",
+    Description: "generoingenieriaun@gmail.com",
+    Video_Key: "5BB0wbMtnEI",
+  },
 ];
